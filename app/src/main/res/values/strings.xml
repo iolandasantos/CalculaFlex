@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">CalculaFlex</string>
+    <string name="header_gas_station">Posto de Gasolina</string>
+    <string name="header_gasoline_price">Preço Gasolina</string>
+    <string name="header_ethanol_price">Preço Etanol</string>
+    <string name="header_average">Consumo médio</string>
+    <string name="header_average_gasoline">Km/L Gasolina</string>
+    <string name="header_average_ethanol">Km/L Álcool</string>
+    <string name="hint_gasoline">Ex.: 3.50</string>
+    <string name="hint_ethanol">Ex.: 2.50</string>
+    <string name="hint_average_gasoline">Ex.: 9</string>
+    <string name="hint_average_ethanol">Ex.: 5</string>
+    <string name="calculate">Calcular</string>
+    <string name="header_suggestion">Sugestão de Abastecimento</string>
+    <string name="header_spent">Gasto R$/Km</string>
+    <string name="gasoline">Gasolina</string>
+    <string name="ethanol">Etanol</string>
+    <string name="label_fuel_ratio">Relação Gasolina/Etanol: %1$s</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="action_settings">Settings</string>
+</resources>

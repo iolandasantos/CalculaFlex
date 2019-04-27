@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "789451002902",
+    "firebase_url": "https://calculaflexiolanda.firebaseio.com",
+    "project_id": "calculaflexiolanda",
+    "storage_bucket": "calculaflexiolanda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789451002902:android:126344d3e740649f",
+        "android_client_info": {
+          "package_name": "br.com.iolandasantos.calculaflex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789451002902-vee3o2loe5cngh4q8mvfhddm8kjbu7ev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMtrpkLLjJRfVaTcii3rxYCPUMRo7jpJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789451002902-vee3o2loe5cngh4q8mvfhddm8kjbu7ev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

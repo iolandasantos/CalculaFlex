@@ -1,0 +1,57 @@
+package br.com.iolandasantos.calculaflex.watchers
+
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
+import java.lang.StringBuilder
+import java.lang.ref.WeakReference
+import java.math.BigDecimal
+import java.text.DecimalFormat
+
+class DecimalTextWatcher(editText: EditText, val totalDecimalNumber: Int = 2) : TextWatcher {
+    private val editTextweakReference: WeakReference<EditText> = WeakReference(editText)
+
+    init{
+        formatMoney(editTextweakReference.get()!!.text)
+    }
+
+    override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+
+    override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+    override fun afterTextChanged(editable: Editable) {
+        formatMoney(editable)
+    }
+
+    private fun getTotalDecimalNumber(): String{
+        val decimalnumber =  StringBuilder()
+        for(i in 1..totalDecimalNumber){
+            decimalnumber.append("0")
+        }
+        return decimalnumber.toString()
+    }
+
+    private fun formatMoney(editable: Editable) {
+        val editText = editTextweakReference.get() ?: return
+        val cleanString = editable.toString().trim().replace(" ", "")
+        editText.removeTextChangedListener(this)
+
+        val number = Math.pow(10.toDouble(), totalDecimalNumber.toDouble())
+
+        val parsed = when (cleanString){
+            null -> BigDecimal(0)
+            "" -> BigDecimal(0)
+            "null" -> BigDecimal(0)
+            else -> BigDecimal(cleanString.replace("\\D+".toRegex(), ""))
+                .setScale(totalDecimalNumber, BigDecimal.ROUND_FLOOR)
+                .divide(BigDecimal(number.toInt()), BigDecimal.ROUND_FLOOR)
+
+        }
+
+        val dfnd = DecimalFormat("#,##0.${getTotalDecimalNumber()}")
+        val formatted = dfnd.format(parsed)
+        editText.setText(formatted.replace(',','.'))
+        editText.setSelection(formatted.length)
+        editText.addTextChangedListener(this)
+    }
+}
